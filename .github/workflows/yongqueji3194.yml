@@ -2,7 +2,7 @@ name: yongqueji3194 #30037
 on: #29782
   workflow_dispatch: #11472
   schedule: #3238
-    - cron: '56 * * * *' #21006
+    - cron: '56 5/6 * * *' #21006
 jobs: #17075
   build: #24800
     runs-on: ubuntu-latest #3488
